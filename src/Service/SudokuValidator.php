@@ -25,9 +25,9 @@ final class SudokuValidator implements SudokuValidatorInterface
             throw new \InvalidArgumentException('Grid should be a square');
         }
 
-        for ($i = 0; $i < $n; $i++) {
-            for ($j = 0; $j < $n; $j++) {
-                if (!$this->isMatrixValid($grid, $i, $j)) {
+        for ($colIndex = 0; $colIndex < $n; $colIndex++) {
+            for ($rowIndex = 0; $rowIndex < $n; $rowIndex++) {
+                if (!$this->isMatrixValid($grid, $colIndex, $rowIndex)) {
                     return false;
                 }
             }
@@ -50,8 +50,8 @@ final class SudokuValidator implements SudokuValidatorInterface
     {
         $n = count($grid);
         $actualValues = [];
-        for ($i = 0; $i < $n; $i++) {
-            $actualValues[] = $grid[$i][$colIndex];
+        for ($rowIndex = 0; $rowIndex < $n; $rowIndex++) {
+            $actualValues[] = $grid[$rowIndex][$colIndex];
         }
         sort($actualValues);
 
@@ -62,8 +62,8 @@ final class SudokuValidator implements SudokuValidatorInterface
     {
         $n = count($grid);
         $actualValues = [];
-        for ($i = 0; $i < $n; $i++) {
-            $actualValues[] = $grid[$rowIndex][$i];
+        for ($colIndex = 0; $colIndex < $n; $colIndex++) {
+            $actualValues[] = $grid[$rowIndex][$colIndex];
         }
         sort($actualValues);
 
@@ -78,9 +78,9 @@ final class SudokuValidator implements SudokuValidatorInterface
 
         $actualValues = [];
 
-        for ($i = 0; $i < $square; $i++) {
-            for ($j = 0; $j < $square; $j++) {
-                $actualValues[] = $grid[$i + $startRowIndex][$j + $startColIndex];
+        for ($rowIndex = 0; $rowIndex < $square; $rowIndex++) {
+            for ($colIndex = 0; $colIndex < $square; $colIndex++) {
+                $actualValues[] = $grid[$rowIndex + $startRowIndex][$colIndex + $startColIndex];
             }
         }
 

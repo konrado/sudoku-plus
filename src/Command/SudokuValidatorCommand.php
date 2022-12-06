@@ -25,7 +25,7 @@ class SudokuValidatorCommand extends Command
         $filePath = $input->getArgument('filepath');
 
         if (false === file_exists($filePath) || false === is_readable($filePath)) {
-            $output->writeln('<error>Given file does not exists or is not readable</error>');
+            $output->writeln('<error>Given file does not exist or is not readable</error>');
 
             return Command::FAILURE;
         }
@@ -60,9 +60,9 @@ class SudokuValidatorCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setHelp('This command allows you validate given csv file with sudoku board')
+            ->setHelp('This command allows you validate given csv file with sudoku grid')
             ->setName('sudoku:validator')
-            ->addArgument('filepath', InputArgument::REQUIRED, 'Filepath to csv file');
+            ->addArgument('filepath', InputArgument::REQUIRED, 'Absolute filepath to csv file');
     }
 
     private function csvToArray(string $csvFilePath): array

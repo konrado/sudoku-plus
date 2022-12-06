@@ -17,3 +17,7 @@ php bin/phpunit tests/Service/SudokuValidatorTest.php
 ```
 php bin/phpunit tests/Command/SudokuValidatorCommandTest.php
 ```
+
+### TODO
+- [ ] Docker integration
+- [ ] Proper code style enforcement
