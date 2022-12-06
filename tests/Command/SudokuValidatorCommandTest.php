@@ -34,7 +34,7 @@ class SudokuValidatorCommandTest extends KernelTestCase
         $command = $application->find('sudoku:validator');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
-            'filepath' => $kernel->getProjectDir() . '/tests/data/sudoku/invalid.csv',
+            'filepath' => $kernel->getProjectDir() . '/tests/data/sudoku/invalid_values.csv',
         ]);
 
         $this->assertEquals(Command::FAILURE, $commandTester->getStatusCode());

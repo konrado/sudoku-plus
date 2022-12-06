@@ -13,7 +13,7 @@ composer install
 
 ```
 php bin/console sudoku:validator /home/user/projects/sudoku-plus/tests/data/sudoku/valid.csv
-php bin/console sudoku:validator /home/user/projects/sudoku-plus/tests/data/sudoku/invalid.csv
+php bin/console sudoku:validator /home/user/projects/sudoku-plus/tests/data/sudoku/invalid_values.csv
 ```
 
 ### How to run tests
